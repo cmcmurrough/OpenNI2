@@ -150,6 +150,7 @@ $(FINAL_DIR):
 	mkdir -p $(FINAL_DIR)
 
 doc:
+	@echo 'Documentation build disabled in makefile...'
 	#Source/Documentation/Runme.py
 	#rm -f Source/Documentation/html/*.md5
 	
