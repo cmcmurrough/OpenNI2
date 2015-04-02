@@ -109,7 +109,7 @@ endef
 
 ################ TARGETS ##################
 
-.PHONY: all $(ALL_PROJS) $(ALL_PROJS_CLEAN) install uninstall clean release
+.PHONY: all $(ALL_PROJS) $(ALL_PROJS_CLEAN) install uninstall clean release odroid
 
 # make all makefiles
 all: $(ALL_PROJS)
