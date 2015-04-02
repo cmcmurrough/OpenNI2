@@ -109,7 +109,7 @@ endef
 
 ################ TARGETS ##################
 
-.PHONY: all $(ALL_PROJS) $(ALL_PROJS_CLEAN) install uninstall clean release odroid
+.PHONY: all $(ALL_PROJS) $(ALL_PROJS_CLEAN) install uninstall clean release
 
 # make all makefiles
 all: $(ALL_PROJS)
@@ -150,15 +150,10 @@ $(FINAL_DIR):
 	mkdir -p $(FINAL_DIR)
 
 doc:
-	Source/Documentation/Runme.py
-	rm -f Source/Documentation/html/*.md5
+	#Source/Documentation/Runme.py
+	#rm -f Source/Documentation/html/*.md5
 	
 release: | all doc $(FINAL_DIR)
-	Packaging/Harvest.py Packaging/$(PRODUCT_STRING) $(PLATFORM)
-	cd Packaging; tar -cjf Final/$(PRODUCT_STRING).tar.bz2 $(PRODUCT_STRING)
-	
-odroid: | all $(FINAL_DIR)
-	@echo Running with odroid build configuration...
 	Packaging/Harvest.py Packaging/$(PRODUCT_STRING) $(PLATFORM)
 	cd Packaging; tar -cjf Final/$(PRODUCT_STRING).tar.bz2 $(PRODUCT_STRING)
 
