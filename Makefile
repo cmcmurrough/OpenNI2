@@ -150,9 +150,8 @@ $(FINAL_DIR):
 	mkdir -p $(FINAL_DIR)
 
 doc:
-	@echo 'Documentation build disabled in makefile...'
-	#Source/Documentation/Runme.py
-	#rm -f Source/Documentation/html/*.md5
+	Source/Documentation/Runme.py
+	rm -f Source/Documentation/html/*.md5
 	
 release: | all doc $(FINAL_DIR)
 	Packaging/Harvest.py Packaging/$(PRODUCT_STRING) $(PLATFORM)
