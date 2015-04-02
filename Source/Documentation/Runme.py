@@ -47,6 +47,6 @@ for root, dirs, files in os.walk(javaSrc):
         cmd.append(os.path.join(root, file))
 
 errfile = "Temp/javadoc_error"
-subprocess.check_call(cmd, stdout=open(os.devnull,"w"), stderr=open(errfile,"w"))
+#subprocess.check_call(cmd, stdout=open(os.devnull,"w"), stderr=open(errfile,"w"))
 
 os.chdir(beforeDir)
